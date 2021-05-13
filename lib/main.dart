@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:note_taking_app/home_page.dart';
+import 'package:note_taking_app/Pages/home_page.dart';
+import 'package:note_taking_app/Pages/login_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,17 +9,28 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    bringvegetables(thaila: true);
     int days = 30;
     String name = "Prabal";
 
-    // bool ismale = true;
-    // num temp = 30.66;
-    // var day = "Tueday";
-    // const pi = 3.14;
-    // final
-
     return MaterialApp(
-      home: HomePage(),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      initialRoute: "/home",
+      routes: {
+        "/home": (context) => HomePage(),
+        "/": (context) => LoginPage(),
+        "/login": (context) => LoginPage()
+      },
     );
   }
+}
+
+bringvegetables({
+  @required bool thaila,
+  int rupees = 100,
+}) {
+  // Take Cycle
+  //Go to sec 16
 }
