@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     bringvegetables(thaila: true);
     int days = 30;
-    String name = "Prabal";
+    String _name = "Prabal";
 
     return MaterialApp(
       themeMode: ThemeMode.light,
