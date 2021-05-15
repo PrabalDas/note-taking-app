@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:note_taking_app/Pages/home_page.dart';
 import 'package:note_taking_app/Pages/login_page.dart';
+import 'package:note_taking_app/Widgets/themes.dart';
 import 'package:note_taking_app/utils/routes.dart';
 
 void main() {
@@ -16,10 +17,9 @@ class MyApp extends StatelessWidget {
     String _name = "Prabal";
 
     return MaterialApp(
-      theme: ThemeData(
-          primaryColor: Colors.deepPurple,
-          primaryTextTheme: GoogleFonts.latoTextTheme(),
-          fontFamily: GoogleFonts.lato().fontFamily),
+      themeMode: ThemeMode.light,
+      theme: MyTheme.LightTheme(context),
+      darkTheme: MyTheme.DarkTheme(context),
       initialRoute: MyRoutes.homeRoute,
       routes: {
         MyRoutes.homeRoute: (context) => HomePage(),
