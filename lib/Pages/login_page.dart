@@ -63,6 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                         if (value.isEmpty) {
                           return "Username cannot be empty";
                         }
+                        return null;
                       },
                     ),
                     TextFormField(
@@ -72,6 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                         } else if (value.length < 6) {
                           return "Password should be min 6 characters";
                         }
+                        return null;
                       },
                       obscureText: true,
                       decoration: InputDecoration(

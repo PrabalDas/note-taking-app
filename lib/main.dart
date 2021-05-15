@@ -16,13 +16,11 @@ class MyApp extends StatelessWidget {
     String _name = "Prabal";
 
     return MaterialApp(
-      themeMode: ThemeMode.light,
       theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
+          primaryColor: Colors.deepPurple,
           primaryTextTheme: GoogleFonts.latoTextTheme(),
           fontFamily: GoogleFonts.lato().fontFamily),
-      darkTheme: ThemeData(brightness: Brightness.dark),
-      initialRoute: "/",
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         MyRoutes.homeRoute: (context) => HomePage(),
         "/": (context) => LoginPage(),
