@@ -1,11 +1,13 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:note_taking_app/Models.dart/catalog.dart';
 import 'package:note_taking_app/Widgets/home_widgets/catalog_header.dart';
 import 'package:note_taking_app/Widgets/home_widgets/catalog_list.dart';
 import 'package:note_taking_app/Widgets/themes.dart';
+import 'package:note_taking_app/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomePage extends StatefulWidget {
@@ -53,6 +55,13 @@ class _HomePageState extends State<HomePage> {
                   CircularProgressIndicator().py16().centered().expand()
               ],
             )),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: MyTheme.darkBluishColor,
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.cartRoute);
+        },
+        child: Icon(CupertinoIcons.cart),
       ),
     );
   }
