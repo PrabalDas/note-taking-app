@@ -16,7 +16,7 @@ class HomeDetailPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
-        backgroundColor: MyTheme.creamcolor,
+        backgroundColor: context.canvasColor,
         body: SafeArea(
           child: Column(
             children: [
@@ -31,11 +31,11 @@ class HomeDetailPage extends StatelessWidget {
                       height: 30,
                       child: Container(
                           width: context.screenWidth,
-                          color: Colors.white,
+                          color: context.cardColor,
                           child: Column(
                             children: [
                               catalog.name.text.xl4
-                                  .color(MyTheme.darkBluishColor)
+                                  .color(context.accentColor)
                                   .bold
                                   .make()
                                   .pOnly(left: 8),
@@ -54,7 +54,7 @@ class HomeDetailPage extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: Container(
-          color: Colors.white,
+          color: context.cardColor,
           child:
               ButtonBar(alignment: MainAxisAlignment.spaceBetween, children: [
             "\$${catalog.price}".text.bold.red800.xl4.make(),
@@ -63,7 +63,7 @@ class HomeDetailPage extends StatelessWidget {
                 child: "Add to Cart".text.make(),
                 style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(MyTheme.darkBluishColor),
+                      MaterialStateProperty.all(Theme.of(context).buttonColor),
                 )).wh(120, 50)
           ]).p16(),
         ));

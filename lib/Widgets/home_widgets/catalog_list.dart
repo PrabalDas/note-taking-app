@@ -48,7 +48,7 @@ class CatalogItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             catalog.name.text.lg
-                .color(MyTheme.darkBluishColor)
+                .color(context.accentColor)
                 .bold
                 .make()
                 .pOnly(left: 8),
@@ -70,7 +70,7 @@ class CatalogItem extends StatelessWidget {
         ))
       ],
     ).p16())
-        .white
+        .color(context.cardColor)
         .rounded
         .square(152)
         .make()
@@ -88,6 +88,6 @@ class CatalogImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.network(
       catalog.image,
-    ).box.rounded.p8.color(MyTheme.creamcolor).make().w32(context);
+    ).box.rounded.p8.color(context.canvasColor).make().w32(context);
   }
 }

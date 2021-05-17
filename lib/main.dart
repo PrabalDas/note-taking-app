@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     String _name = "Prabal";
 
     return MaterialApp(
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       initialRoute: MyRoutes.homeRoute,
