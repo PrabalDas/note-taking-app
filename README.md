@@ -1,6 +1,6 @@
 # note_taking_app
 
-A new Flutter project.
+Build an Catalog app along with gPay intregation.Also covered VxState management
 
 ## Getting Started
 
