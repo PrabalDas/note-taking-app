@@ -5,10 +5,14 @@ import 'package:note_taking_app/Pages/home_detail_page.dart';
 import 'package:note_taking_app/Pages/home_page.dart';
 import 'package:note_taking_app/Pages/login_page.dart';
 import 'package:note_taking_app/Widgets/themes.dart';
+import 'package:note_taking_app/core/store.dart';
 import 'package:note_taking_app/utils/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(VxState(
+    store: MyStore(),
+    child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

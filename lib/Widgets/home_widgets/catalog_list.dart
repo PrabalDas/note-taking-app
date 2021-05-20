@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:note_taking_app/Models.dart/cart.dart';
 import 'package:note_taking_app/Models.dart/catalog.dart';
 import 'package:note_taking_app/Pages/home_detail_page.dart';
 import 'package:note_taking_app/Widgets/themes.dart';
+import 'package:note_taking_app/core/store.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CatalogList extends StatelessWidget {
@@ -58,13 +60,9 @@ class CatalogItem extends StatelessWidget {
                 .pOnly(left: 8),
             ButtonBar(alignment: MainAxisAlignment.spaceBetween, children: [
               "\$${catalog.price}".text.make(),
-              ElevatedButton(
-                  onPressed: () {},
-                  child: "Buy".text.make(),
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(MyTheme.darkBluishColor),
-                  ))
+              _AddToCart(
+                catalog: catalog,
+              )
             ])
           ],
         ))
@@ -75,6 +73,32 @@ class CatalogItem extends StatelessWidget {
         .square(152)
         .make()
         .py16();
+  }
+}
+
+class _AddToCart extends StatelessWidget {
+  final Item catalog;
+
+  _AddToCart({Key key, this.catalog}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    VxState.watch(context, on: [AddMutation]);
+    final Cartmodel _cart = (VxState.store as MyStore).cart;
+
+    bool isInCart = _cart.items.contains(catalog) ?? false;
+    return ElevatedButton(
+        onPressed: () {
+          if (!isInCart){
+        
+          AddMutation(catalog);}
+       
+          // setState(() {});
+        },
+        child: isInCart ? Icon(Icons.done) : "Buy".text.make(),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(MyTheme.darkBluishColor),
+        ));
   }
 }
 

@@ -1,4 +1,6 @@
 import 'package:note_taking_app/Models.dart/catalog.dart';
+import 'package:note_taking_app/core/store.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class Cartmodel {
   //catalog field
@@ -29,5 +31,15 @@ class Cartmodel {
 //remove
   void removeproducts(Item item) {
     _itemIds.remove(item.id);
+  }
+}
+
+class AddMutation extends VxMutation<MyStore> {
+  final Item item;
+
+  AddMutation(this.item);
+  @override
+  perform() {
+    store.cart._itemIds.add(item.id);
   }
 }
