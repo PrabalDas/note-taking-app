@@ -8,9 +8,12 @@ import 'package:note_taking_app/Widgets/themes.dart';
 import 'package:note_taking_app/core/store.dart';
 import 'package:note_taking_app/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:url_strategy/url_strategy.dart';
+
 
 void main() {
   runApp(VxState(
+    
     store: MyStore(),
     child: MyApp()));
 }
